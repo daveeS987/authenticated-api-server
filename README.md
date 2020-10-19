@@ -10,9 +10,9 @@
 
 ### Setup
 
-#### `.env` Requirements
+#### .Env Requirements
 
-- Add the following into an .env file:
+Add the following into an .env file:
 
 ```
 PORT=3000

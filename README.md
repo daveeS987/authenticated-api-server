@@ -4,7 +4,7 @@
 
 ### Links and Resources
 
-- [ci/cd](https://github.com/davee-401-advanced-javascript/auth-server/actions) (GitHub Actions)
+- [ci/cd](https://github.com/davee-401-advanced-javascript/authenticated-api-server/actions) (GitHub Actions)
 <!-- - [back-end server url](http://xyz.com) (when applicable)
 - [front-end application](http://xyz.com) (when applicable) -->
 

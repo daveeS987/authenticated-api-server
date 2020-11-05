@@ -5,7 +5,8 @@
 ### Links and Resources
 
 - [ci/cd](https://github.com/davee-401-advanced-javascript/authenticated-api-server/actions) (GitHub Actions)
-<!-- - [back-end server url](http://xyz.com) (when applicable)
+- [back-end server url](https://davee-auth-api-server.herokuapp.com/)
+<!--
 - [front-end application](http://xyz.com) (when applicable) -->
 
 ### Setup
@@ -62,3 +63,11 @@ In the terminal enter: `npm test`
 <!-- Link to an image of the UML for your application and response to events -->
 
 ![UML](Lab-11-UML.jpg)
+
+<!-- Dev Notes
+
+To see Heroku logs:
+
+heroku logs --tail --app davee-auth-api-server
+
+-->

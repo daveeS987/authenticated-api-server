@@ -34,6 +34,21 @@ REMOTE_API=https://api.github.com/user
 
 #### How to use this server:
 
+The following routes are available:
+
+```
+/signup
+/signin
+
+api/v1/categories
+api/v1/products
+api/v1/todo
+
+api/v2/categories
+api/v2/products
+api/v2/todo
+```
+
 #### Tests
 
 <!-- - How do you run tests?

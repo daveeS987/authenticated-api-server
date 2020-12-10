@@ -18,7 +18,7 @@ const roles = {
   guest: ['read'],
   author: ['read', 'create'],
   editor: ['read', 'update', 'delete'],
-  admin: ['read', 'create', 'update', 'delete '],
+  admin: ['read', 'create', 'update', 'delete'],
 };
 
 users.methods.can = function (capability) {

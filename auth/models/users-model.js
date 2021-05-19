@@ -32,19 +32,21 @@ users.methods.generateToken = function () {
     permissions: roles[this.role],
   };
   let options = {
-    expiresIn: 300,
+    expiresIn: 600,
   };
   let token = jwt.sign(tokenObject, process.env.SECRET, options);
   return token;
 };
 
-
 users.statics.validateBasic = async function (username, password) {
   let user = await this.findOne({ username: username });
   let isValid = await bcrypt.compare(password, user.password);
 
-  if (isValid) { return user; }
-  else { return undefined; }
+  if (isValid) {
+    return user;
+  } else {
+    return undefined;
+  }
 };
 
 users.statics.authenticateWithToken = function (token) {

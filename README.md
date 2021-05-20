@@ -1,24 +1,27 @@
 # Authenticated-Api-Server
 
-### Author: Davee Sok
+## Author: Davee Sok
 
-### Links and Resources
+## Overview
 
-- [ci/cd](https://github.com/davee-401-advanced-javascript/authenticated-api-server/actions) (GitHub Actions)
-- [back-end server url](https://davee-auth-api-server.herokuapp.com/)
-<!--
-- [front-end application](http://xyz.com) (when applicable) -->
+An Express/Node.js based server using a custom “authentication” module that is designed to handle user registration and sign in using Basic, Bearer, or OAuth along with a custom “authorization” module that will grant/deny users access to the server based on their role or permissions level. It can dynamically perform CRUD operations to a MongoDB database and power multiple different frontend applications, using the REST standard.
 
-### Setup
+## Links and Resources
 
-#### .Env Requirements
+- [CI/CD](https://github.com/davee-401-advanced-javascript/authenticated-api-server/actions) (GitHub Actions)
+- [Back-End Server URL](https://davee-auth-api-server.herokuapp.com/)
 
-Add the following into an .env file:
+## Getting Started
+
+- Make sure MongoDB is installed locally
+- Clone down this repo
+- Install Dependencies: `npm install`
+- Create an .env file and add the following:
 
 ```
 PORT=3000
 MONGODB_URI=mongodb://localhost:27017/authenticated-api-server
-SECRET= pick a secret word
+SECRET= << Pick a secret word. This is to authenticate a token with your front end application>
 CLIENT_ID= get this from github
 CLIENT_SECRET= get this from github
 STATE= pick anything you want
@@ -27,11 +30,7 @@ REDIRECT_URI=http://localhost:3000/oauth
 REMOTE_API=https://api.github.com/user
 ```
 
-#### How to initialize/run your application (where applicable)
-
-- Clone repository
-- Enter: `npm start`  
-  or: `nodemon index.js` into command line
+- Run `nodemon index.js`
 
 #### How to use this server:
 
@@ -50,24 +49,6 @@ api/v2/products
 api/v2/todo
 ```
 
-#### Tests
+## Tests
 
-<!-- - How do you run tests?
-- Any tests of note?
-- Describe any tests that you did not complete, skipped, etc -->
-
-In the terminal enter: `npm test`
-
-#### UML
-
-<!-- Link to an image of the UML for your application and response to events -->
-
-![UML](Lab-11-UML.jpg)
-
-<!-- Dev Notes
-
-To see Heroku logs:
-
-heroku logs --tail --app davee-auth-api-server
-
--->
+- In the terminal enter: `npm test`

@@ -4,13 +4,13 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-const users = mongoose.Schema({
+const user = mongoose.Schema({
   username: { type: String, required: true },
   password: { type: String, required: true },
   role: { type: String, required: true, default: 'admin', enum: ['guest', 'author', 'editor', 'admin'] },
 });
 
-users.pre('save', async function () {
+user.pre('save', async function () {
   this.password = await bcrypt.hash(this.password, 5);
 });
 
@@ -21,11 +21,11 @@ const roles = {
   admin: ['read', 'create', 'update', 'delete'],
 };
 
-users.methods.can = function (capability) {
+user.methods.can = function (capability) {
   return roles[this.role].includes(capability);
 };
 
-users.methods.generateToken = function () {
+user.methods.generateToken = function () {
   let tokenObject = {
     username: this.username,
     role: this.role,
@@ -38,7 +38,7 @@ users.methods.generateToken = function () {
   return token;
 };
 
-users.statics.validateBasic = async function (username, password) {
+user.statics.validateBasic = async function (username, password) {
   let user = await this.findOne({ username: username });
   let isValid = await bcrypt.compare(password, user.password);
 
@@ -49,10 +49,10 @@ users.statics.validateBasic = async function (username, password) {
   }
 };
 
-users.statics.authenticateWithToken = function (token) {
+user.statics.authenticateWithToken = function (token) {
   const parsedToken = jwt.verify(token, process.env.SECRET);
   let user = this.findOne({ username: parsedToken.username });
   return user;
 };
 
-module.exports = mongoose.model('users', users);
+module.exports = mongoose.model('user', user);

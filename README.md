@@ -44,7 +44,7 @@ The application will be created with the following overall architecture and meth
 - Install Dependencies: `npm install`
 - Create an .env file and add the following:
 
-```
+```javascript
 PORT=3000
 MONGODB_URI=mongodb://localhost:27017/authenticated-api-server
 SECRET= << Pick a secret word. This is to authenticate a token with your front end application>
@@ -62,7 +62,7 @@ REMOTE_API=https://api.github.com/user
 
 The following routes are available:
 
-```
+```JavaScript
 /signup
 /signin
 
